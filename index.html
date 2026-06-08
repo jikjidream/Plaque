@@ -45,13 +45,13 @@ img, video {
   }
 }
   :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-pale: #F5EDD6;
-    --dark: #1A1410;
-    --charcoal: #2E2820;
-    --warm-gray: #7A6E60;
-    --cream: #FAF7F0;
+    --gold: #B59344;
+    --gold-light: #D4B97A;
+    --gold-pale: #F9F5EA;
+    --dark: #231F1D;
+    --charcoal: #3D3732;
+    --warm-gray: #8E847B;
+    --cream: #FDFBFA;
     --white: #FFFFFF;
   }
 
@@ -208,38 +208,42 @@ img, video {
     max-width: 580px;
   }
 
-  /* ── CERT SECTION ── */
+    /* ── CERT SECTION ── */
   .cert-section {
-    background: var(--charcoal);
-    color: var(--white);
+    background: var(--gold-pale);
+    color: var(--dark);
   }
-  .cert-section .section-title { color: var(--white); }
-  .cert-section .section-body { color: rgba(255,255,255,0.55); max-width: 100%; }
+  .cert-section .section-title { color: var(--dark); }
+  .cert-section .section-body { color: var(--warm-gray); max-width: 100%; }
 
   .cert-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2px;
+    gap: 20px; /* 간격을 넓혀 카드를 분리 */
     margin-top: 56px;
-    border: 1px solid rgba(201,168,76,0.2);
   }
   .cert-card {
+    background: var(--white);
     padding: 40px 36px;
-    border: 1px solid rgba(201,168,76,0.1);
+    border: 1px solid rgba(181, 147, 68, 0.15); /* 은은한 골드 테두리 */
+    border-radius: 6px;
     position: relative;
     overflow: hidden;
-    transition: background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  .cert-card:hover { background: rgba(201,168,76,0.06); }
+  .cert-card:hover { 
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  }
   .cert-card::after {
     content: '';
     position: absolute;
     top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--gold);
-    transition: height 0.4s ease;
+    width: 3px; height: 100%;
+    background: var(--gold-pale);
+    transition: background 0.4s ease;
   }
-  .cert-card:hover::after { height: 100%; }
+  .cert-card:hover::after { background: var(--gold); }
 
   .cert-icon {
     font-size: 2rem;
@@ -250,15 +254,15 @@ img, video {
     font-family: 'Noto Serif KR', serif;
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--dark);
     margin-bottom: 10px;
   }
   .cert-card p {
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.5);
+    color: var(--warm-gray);
     line-height: 1.8;
   }
-
+  
   /* ── PHOTO SECTION ── */
   .photo-section { background: var(--white); }
   .photo-layout {
@@ -542,7 +546,7 @@ img, video {
   body { padding-top: 56px; }
 
   /* ── PRICE TABLE ── */
-  .price-section { background: var(--white); }
+  .price-section { background: var(--gold-pale); }
   .price-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -762,8 +766,8 @@ img, video {
     .pv-step:not(:last-child)::after { right: -10px; font-size: 0.9rem; }
   }
 
-  /* ── BEST PRODUCTS ── */
-  .best-section { background: var(--white); }
+ /* ── BEST PRODUCTS ── */
+  .best-section { background: var(--cream); } /* 배경을 크림색으로 통일하여 안정감 부여 */
   .best-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -771,11 +775,11 @@ img, video {
     margin-top: 48px;
   }
   .best-card {
-    border: 1px solid #EAE4D8;
+    border: 1px solid rgba(181, 147, 68, 0.15); /* 다른 카드들과 동일한 은은한 골드 테두리 적용 */
     border-radius: 6px;
     overflow: hidden;
     transition: transform 0.25s, box-shadow 0.25s;
-    background: var(--white);
+    background: var(--white); /* 카드는 완전한 흰색으로 강조 */
   }
   .best-card:hover {
     transform: translateY(-6px);
